@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/Link";
 import styled from "styled-components";
 
 import Nav from "./Nav";
@@ -38,7 +38,7 @@ export default function Header() {
     <HederStyles>
       <div className="bar">
         <Logo>
-          <Link href="/">Slick fits</Link>
+          <Link href="/">Sick fits</Link>
         </Logo>
       </div>
       <div className="sub-bar">
