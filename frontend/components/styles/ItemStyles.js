@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ItemStyles = styled.div`
   background: white;
@@ -29,7 +29,7 @@ const ItemStyles = styled.div`
     & > * {
       background: white;
       border: 0;
-      font-size: 1rem;
+      /* font-size: 1rem; */
       padding: 1rem;
     }
   }
