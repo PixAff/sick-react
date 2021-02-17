@@ -46,7 +46,6 @@ export default function CreateProduct() {
       refetchQueries: [{ query: ALL_PRODUCTS_QUERY }],
     }
   );
-  console.log(createProduct);
 
   async function handleSubmit(e) {
     e.preventDefault();
