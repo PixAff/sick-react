@@ -1,3 +1,4 @@
+import { CartItem } from './schemas/CartItem';
 import { createAuth } from "@keystone-next/auth";
 import { config, createSchema } from "@keystone-next/keystone/schema";
 import {
@@ -11,6 +12,7 @@ import { User } from "./schemas/User";
 import { Product } from "./schemas/Product";
 import { ProductImage } from "./schemas/ProductImage";
 import { insertSeedData } from "./seed-data";
+import { sendMail } from "./lib/mail";
 
 const databaseUrl =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-sick-fits-tutorial";
@@ -30,7 +32,7 @@ const { withAuth } = createAuth({
   },
   passwordResetLink: {
     async sendToken(args) {
-      console.log(args)
+      await sendMail(args.token, args.identity)
     }
   }
 });
@@ -56,6 +58,7 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
     }),
     ui: {
       // TODO: change this to roles
