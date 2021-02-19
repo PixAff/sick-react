@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import DisplayError from "./ErrorMessage";
-import Head from "next/head";
+import Head from "next/Head";
 import styled from "styled-components";
 
 const ProductStyles = styled.div`
